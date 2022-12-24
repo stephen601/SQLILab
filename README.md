@@ -1,2 +1,2 @@
 # SQLILab
-Practice code
+Practice code for SQLI labs
